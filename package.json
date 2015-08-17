@@ -1,0 +1,42 @@
+{
+  "name": "node-sdl2",
+  "version": "1.0.0",
+  "description": "Bindings for SDL2 in Node",
+  "main": "index.js",
+  "dependencies": {
+    "iconv": "^2.1.10",
+    "ffi": "^1.3.2",
+    "ref": "^1.0.2",
+    "ref-array": "^1.1.1",
+    "ref-struct": "^1.0.1",
+    "ref-union": "^0.0.3",
+    "ref-wchar": "^1.0.0"
+  },
+  "devDependencies": {
+    "ffi": "*",
+    "iconv": "*",
+    "ref": "*",
+    "ref-array": "*",
+    "ref-struct": "*",
+    "ref-union": "*",
+    "ref-wchar": "*"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/zetsingithub/node-sdl2.git"
+  },
+  "keywords": [
+    "node",
+    "sdl2",
+    "binding"
+  ],
+  "author": "Zetsin",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/zetsingithub/node-sdl2/issues"
+  },
+  "homepage": "https://github.com/zetsingithub/node-sdl2"
+}
