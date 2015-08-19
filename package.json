@@ -1,6 +1,6 @@
 {
   "name": "node-sdl2",
-  "version": "1.0.0",
+  "version": "1.0.2",
   "description": "Bindings for SDL2 in Node",
   "main": "index.js",
   "dependencies": {
@@ -11,15 +11,6 @@
     "ref-struct": "^1.0.1",
     "ref-union": "^0.0.3",
     "ref-wchar": "^1.0.0"
-  },
-  "devDependencies": {
-    "ffi": "*",
-    "iconv": "*",
-    "ref": "*",
-    "ref-array": "*",
-    "ref-struct": "*",
-    "ref-union": "*",
-    "ref-wchar": "*"
   },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
