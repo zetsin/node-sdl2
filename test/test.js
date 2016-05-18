@@ -4,11 +4,11 @@ console.log(index('SDL'))
 var ref = require('ref');
 var ffi = require('ffi');
 var SDL = require('./lib/SDL.js');
-var SDL_video = require('./lib/SDL_video.js');
-var SDL_events = require('./lib/SDL_events.js');
-var SDL_render = require('./lib/SDL_render.js');
-var SDL_surface = require('./lib/SDL_surface.js');
-var SDL_error = require('./lib/SDL_error.js');
+//var SDL_video = require('./lib/SDL_video.js');
+//var SDL_events = require('./lib/SDL_events.js');
+//var SDL_render = require('./lib/SDL_render.js');
+//var SDL_surface = require('./lib/SDL_surface.js');
+//var SDL_error = require('./lib/SDL_error.js');
 
 // basic type
 var void_type = ref.types.void;
@@ -36,9 +36,9 @@ var cbs = {};
 	var e = new SDL_events.SDL_Event;
 	(function poll() {
 		var quit = false;
-		var result = SDL_events.SDL_PollEvent(e.ref());
+		var result = SDL.SDL_PollEvent(e.ref());
 		if(result){
-			if (e.type == SDL_events.SDL_EventType.SDL_QUIT){
+			if (e.type == SDL.SDL_EventType.SDL_QUIT){
 				quit = true;
 			}
 		}
@@ -68,17 +68,17 @@ function on_create(win, ren) {
 	cbs.event_filter = ffi.Callback(int, [ void_ptr, SDL_Event_ptr ], function (userdata, event) {
 		var e = event.deref();
 		console.log(e.type)
-		if (e.type == SDL_events.SDL_EventType.SDL_QUIT){
+		if (e.type == SDL.SDL_EventType.SDL_QUIT){
 			quit = true;
 		}
 		return 1;
 	});
-	SDL_events.SDL_SetEventFilter(cbs.event_filter, ref.NULL);
+	SDL.SDL_SetEventFilter(cbs.event_filter, ref.NULL);
 }
 
 function log(msg) {
 	console.log(msg + " error: ");
-	console.log(SDL_error.SDL_GetError());
+	console.log(SDL.SDL_GetError());
 }
 
 /*
