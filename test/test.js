@@ -1,123 +1,73 @@
-var path = require('path');
-var index = require('./index.js');
-console.log(index('SDL'))
-var ref = require('ref');
-var ffi = require('ffi');
-var SDL = require('./lib/SDL.js');
-var SDL_video = require('./lib/SDL_video.js');
-var SDL_events = require('./lib/SDL_events.js');
-var SDL_render = require('./lib/SDL_render.js');
-var SDL_surface = require('./lib/SDL_surface.js');
-var SDL_error = require('./lib/SDL_error.js');
+var libSDL = require('../index.js')
+var SDL = libSDL('SDL')
+var SDL_video = libSDL('SDL_video')
+var SDL_events = libSDL('SDL_events')
 
-// basic type
-var void_type = ref.types.void;
-var int = ref.types.int;
-var string = ref.types.CString;
+var ref = require('ref')
 
-// basic pointer
-var void_ptr = ref.refType(void_type);
-var SDL_Event_ptr = ref.refType(SDL_events.SDL_Event);
 
-// basic value
-var NULL = ref.NULL;
+if(SDL.SDL_Init(0) != 0) {
+	cleanup()
+	return
+}
 
-// globals
-var cbs = {};
+var global = {}
+global.win = SDL_video.SDL_CreateWindow('Hello world', 100, 100, 640, 480, 0x00000020)
+if(global.win.isNull()) {
+	cleanup()
+	return 
+}
 
-// main function
-(function main() {
-	if(SDL.SDL_Init(SDL.SDL_INIT_EVERYTHING) != 0) {
-		log('SDL_Init');
-		cleanup();
-		return;
+var event = ref.alloc('int')
+;(function spinforever() {
+	var quit = false
+	var pending = SDL_events.SDL_PollEvent(event)
+	if(pending){
+		console.log(event.deref())
+		if (event.deref() == 256){
+			quit = true
+		}
 	}
 
-	var e = new SDL_events.SDL_Event;
-	(function poll() {
-		var quit = false;
-		var result = SDL_events.SDL_PollEvent(e.ref());
-		if(result){
-			if (e.type == SDL_events.SDL_EventType.SDL_QUIT){
-				quit = true;
-			}
-		}
-
-		if(!quit) {
-			if(result) {
-				process.nextTick(poll);
-			} else {
-				setTimeout(poll);
-			}
+	if(!quit) {
+		if(pending) {
+			process.nextTick(spinforever)
 		} else {
-			cleanup();
+			setTimeout(spinforever)
 		}
-	})();
-
-	function cleanup() {
-		SDL.SDL_Quit();
-		process.exit();
+	} else {
+		cleanup()
 	}
-})();
+})()
 
-function on_create(win, ren) {
-	//test string(uincode)
-	//SDL_video.SDL_SetWindowTitle(win, 'I am 刘小花');
-
-	//test function pointer
-	cbs.event_filter = ffi.Callback(int, [ void_ptr, SDL_Event_ptr ], function (userdata, event) {
-		var e = event.deref();
-		console.log(e.type)
-		if (e.type == SDL_events.SDL_EventType.SDL_QUIT){
-			quit = true;
-		}
-		return 1;
-	});
-	SDL_events.SDL_SetEventFilter(cbs.event_filter, ref.NULL);
+function cleanup() {
+	SDL_video.SDL_DestroyWindow(global.win)
+	SDL.SDL_Quit()
+	process.exit()
+	var win = global.win
+	global.win = null
 }
 
-function log(msg) {
-	console.log(msg + " error: ");
-	console.log(SDL_error.SDL_GetError());
-}
 
-/*
 
-	win = SDL_video.SDL_CreateWindow('Hello world', 100, 100, 640, 480, SDL_video.SDL_WindowFlags.SDL_WINDOW_SHOWN | SDL_video.SDL_WindowFlags.SDL_WINDOW_RESIZABLE);
-	if(win.isNull()) {
-		log('SDL_CreateWindow');
-		cleanup();
-		return;
-	}
-	ren = SDL_render.SDL_CreateRenderer(win, -1, SDL_render.SDL_RENDERER_ACCELERATED | SDL_render.SDL_RENDERER_PRESENTVSYNC);
-	if(ren.isNull()) {
-		log('SDL_CreateRenderer');
-		cleanup();
-		return;
-	}
-	var imagePath = path.resolve(__dirname, 'test.bmp');
-	var image = SDL_surface.SDL_LoadBMP(imagePath);
-	if(image.isNull()) {
-		log('SDL_LoadBMP');
-		return;
-	}
 
-	var tex = SDL_render.SDL_CreateTextureFromSurface(ren, image);
-	SDL_surface.SDL_FreeSurface(image);
-	if(tex.isNull()) {
-		log('SDL_FreeSurface');
-		return;
+;(function loop() {
+	var screen = SDL_video.SDL_GetWindowSurface(global.win)
+	if(screen.isNull()) {
+		return
 	}
-	*/
-/*
-	(function render() {
-		setTimeout(function() {
-			SDL_render.SDL_RenderClear(ren);
-			SDL_render.SDL_RenderCopy(ren, tex, NULL, NULL);
-			SDL_render.SDL_RenderPresent(ren);
-			render();
-		}, 0);
-	})();
-*/
+	var w = screen.deref().w
+	var h = screen.deref().h
+	var size = w * h
+	var buf = new Buffer(size * 4)
+	var buf_ref = buf.ref()
+	buf_ref.writeInt64LE(screen.deref().pixels.address(), 0)
+	buf = buf_ref.deref()
+	for(var key in buf) {
+		buf[key] = parseInt(Math.random() * 0xee)
+	}
+	// buf_ref.deref().fill()
+	SDL_video.SDL_UpdateWindowSurface(global.win)
 
-	//SDL_render.SDL_DestroyTexture(tex);
+	setTimeout(loop)
+})()
