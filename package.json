@@ -1,12 +1,15 @@
 {
   "name": "node-sdl2",
-  "version": "2.0.0",
+  "version": "2.0.2",
   "description": "Bindings for SDL2 in Node",
   "main": "index.js",
   "dependencies": {
     "ffi": "^2.0.0",
     "ref-array": "^1.1.2",
     "ref-union": "^1.0.1"
+  },
+  "devDependencies": {
+    "ffi-gen": "*"
   },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
