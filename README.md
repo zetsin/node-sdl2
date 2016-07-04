@@ -9,16 +9,7 @@ npm install node-sdl2
 
 ## Use
 
-### 1. Use as primitive SDL2 API ( [SDL 2.0 API by Category](https://wiki.libsdl.org/APIByCategory) )
-
-```javascript
-const NS = require('node-sdl2')
-const SDL2_video = NS.require('SDL2_video')
-const SDL2_render = NS.require('SDl2_render')
-...
-```
-
-### 2. Use with wrapped class ( [Api Reference](#api-references) )
+### 1. Use with wrapped class ( [Api Reference](#api-references) )
 
 ```javascript
 const NS = require('node-sdl2')
@@ -37,6 +28,15 @@ let draw = () => {
   ...
 }
 
+```
+
+### 2. Use as primitive SDL2 API ( [SDL 2.0 API by Category](https://wiki.libsdl.org/APIByCategory) )
+
+```javascript
+const NS = require('node-sdl2')
+const SDL2_video = NS.require('SDL2_video')
+const SDL2_render = NS.require('SDl2_render')
+...
 ```
 
 ## API References
