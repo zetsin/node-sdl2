@@ -9,7 +9,7 @@ npm install node-sdl2
 
 ## Use
 
-### Use as primitive SDL2 API ( [SDL 2.0 API by Category](https://wiki.libsdl.org/APIByCategory) )
+### 1. Use as primitive SDL2 API ( [SDL 2.0 API by Category](https://wiki.libsdl.org/APIByCategory) )
 
 ```javascript
 const NS = require('node-sdl2')
@@ -18,7 +18,7 @@ const SDL2_render = NS.require('SDl2_render')
 ...
 ```
 
-### Use with wrapped class ( [Api Reference](#app) )
+### 2. Use with wrapped class ( [Api Reference](#app) )
 
 ```javascript
 const NS = require('node-sdl2')
