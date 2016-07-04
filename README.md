@@ -18,7 +18,7 @@ const SDL2_render = NS.require('SDl2_render')
 ...
 ```
 
-### 2. Use with wrapped class ( [Api Reference](#api-reference) )
+### 2. Use with wrapped class ( [Api Reference](#api-references) )
 
 ```javascript
 const NS = require('node-sdl2')
