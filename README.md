@@ -3,7 +3,7 @@ Bindings for SDL2 in Node
 
 ## Installation
 Install with npm:
-```
+```javascript
 npm install node-sdl2
 ```
 
@@ -11,7 +11,7 @@ npm install node-sdl2
 
 ### Use as primitive SDL2 API ( [SDL 2.0 API by Category](https://wiki.libsdl.org/APIByCategory) )
 
-```
+```javascript
 const NS = require('node-sdl2')
 const SDL2_video = NS.require('SDL2_video')
 const SDL2_render = NS.require('SDl2_render')
@@ -20,7 +20,7 @@ const SDL2_render = NS.require('SDl2_render')
 
 ### Use with wrapped class ( [Api Reference](#app) )
 
-```
+```javascript
 const NS = require('node-sdl2')
 const App = NS.app
 const Window = NS.window
