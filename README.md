@@ -95,6 +95,45 @@ The `window` object emits the following events:
 ##### Event 'mouseup'
 ##### Event 'mousewheel'
 
+#### Methods
+The `window` object has the following methods:
+
+##### `window.getID()`
+##### `window.close()`
+##### `window.destroy()`
+##### `window.restore()`
+##### `window.center()`
+##### `window.setModal(window)`
+##### `window.focus` [Getter/Setter]
+##### `window.grab` [Getter/Setter]
+##### `window.show` [Getter/Setter]
+##### `window.maximize` [Getter/Setter]
+##### `window.minimize` [Getter/Setter]
+##### `window.fullScreen` [Getter/Setter]
+##### `window.bounds` [Getter/Setter]
+##### `window.size` [Getter/Setter]
+##### `window.minimumSize` [Getter/Setter]
+##### `window.maximumSize` [Getter/Setter]
+##### `window.resizable` [Getter]
+##### `window.closable` [Getter/Setter]
+##### `window.position` [Getter/Setter]
+##### `window.title` [Getter/Setter]
+##### `window.background` [Getter/Setter]
+##### `window.bordered` [Setter]
+##### `window.bordersSize` [Getter]
+##### `window.screenKeyboard` [Getter]
+##### `static Window.all` [Getter]
+##### `static Window.focused` [Getter]
+##### `static Window.mouseFocused` [Getter]
+##### `static Window.keyboardFocused` [Getter]
+##### `static Window.grabbed` [Getter]
+##### `static Window.mouseFocused` [Getter]
+##### `static Window.screenSaver` [Getter]
+##### `static Window.fromID` [Getter]
+##### `static Window.showMessageBox(options, callback)`
+
+
+
 ### clipboard
 > Get and set the clipboard text.
 
