@@ -83,38 +83,86 @@ const SDL2_render = NS.require('SDl2_render')
 
 - Methods
   - `let win = new window(opts)`
-  - `win.getID()`
+    - `opts` Object
+      - `tittle` String - `''`
+      - `w` Integer - `0x1FFF0000`
+      - `h` Integer - `0x1FFF0000`
+      - `x` Integer - `0x1FFF0000`
+      - `y` Integer - `0x1FFF0000`
+      - `background` Integer - `0xFF0000`
+      - `center` Boolean - `false`
+      - `show` Boolean - `true`
+      - `closable` Boolean - `true`
+      - `resizable` Boolean - `true`
+      - `minimized` Boolean - `false`
+      - `maximized` Boolean - `false`
+      - `borderless` Boolean - `false`
+      - `fullscreen` Boolean - `false`
+      - `kiosk` Boolean - `false`
+      - `hdpi` Boolean - `true`
+      - `mouseCapture` Boolean - `false`
+      - `grab` Boolean - `false`
   - `win.close()`
   - `win.destroy()`
   - `win.restore()`
   - `win.center()`
-  - `win.setModal(window)`
-  - `win.focus` [Getter/Setter]
-  - `win.grab` [Getter/Setter]
-  - `win.show` [Getter/Setter]
-  - `win.maximize` [Getter/Setter]
-  - `win.minimize` [Getter/Setter]
-  - `win.fullScreen` [Getter/Setter]
-  - `win.bounds` [Getter/Setter]
-  - `win.size` [Getter/Setter]
-  - `win.minimumSize` [Getter/Setter]
-  - `win.maximumSize` [Getter/Setter]
-  - `win.resizable` [Getter]
-  - `win.closable` [Getter/Setter]
-  - `win.position` [Getter/Setter]
-  - `win.title` [Getter/Setter]
-  - `win.background` [Getter/Setter]
-  - `win.bordered` [Setter]
-  - `win.bordersSize` [Getter]
-  - `win.screenKeyboard` [Getter]
-  - *static* `window.all` [Getter]
-  - *static* `window.focused` [Getter]
-  - *static* `window.mouseFocused` [Getter]
-  - *static* `window.keyboardFocused` [Getter]
-  - *static* `window.grabbed` [Getter]
-  - *static* `window.mouseFocused` [Getter]
-  - *static* `window.screenSaver` [Getter]
-  - *static* `window.fromID` [Getter]
+  - `win.setModal(win)`
+    - `win` [Circular]
+  - `win.size`
+    - `[Getter]` Array-like Object - `{ w: 100, h: 200, "1": 100, "2": 200 }`
+    - `[Setter]` Object|Array - `{ w: 100, h: 200 }` | `[ 100, 200 ]`
+  - `win.bounds`
+    - `[Getter/Setter]` Array-like Object / (Object|Array) - { x, y, w, h }
+  - `win.minimumSize`
+    - `[Getter/Setter]` Array-like Object / (Object|Array) - { w, h }
+  - `win.maximumSize`
+    - `[Getter/Setter]` Array-like Object / (Object|Array) - { w, h }
+  - `win.bordersSize` 
+    - `[Getter]` Array-like Object / (Object|Array) - { top, right, bottom, left }
+  - `win.id`
+    - `[Getter]` Integer
+  - `win.focus`
+    - `[Getter/Setter]` Boolean
+  - `win.grab`
+    - `[Getter/Setter]` Boolean
+  - `win.show` 
+    - `[Getter/Setter]` Boolean
+  - `win.maximize`
+    - `[Getter/Setter]` Boolean
+  - `win.minimize`
+    - `[Getter/Setter]` Boolean
+  - `win.fullScreen`
+    - `[Getter/Setter]` Boolean
+  - `win.resizable`
+    - `[Getter]` Boolean
+  - `win.closable`
+    - `[Getter/Setter]` Boolean
+  - `win.position`
+    - `[Getter/Setter]` Boolean
+  - `win.title`
+    - `[Getter/Setter]` String
+  - `win.background`
+    - `[Getter/Setter]` Integer
+  - `win.bordered`
+    - `[Setter]` Boolean
+  - `win.screenKeyboard`
+    - `[Getter]` Boolean
+  - *static* `window.all`
+    - `[Getter]` win
+  - *static* `window.focused`
+    - `[Getter]` win
+  - *static* `window.mouseFocused`
+    - `[Getter]` win
+  - *static* `window.keyboardFocused`
+    - `[Getter]` win
+  - *static* `window.grabbed`
+    - `[Getter]` win
+  - *static* `window.mouseFocused`
+    - `[Getter]` win
+  - *static* `window.screenSaver`
+    - `[Getter]` win
+  - *static* `window.fromID`
+    - `[Getter]` win
   - *static* `window.showMessageBox(opts, cb)`
 
 - Events
