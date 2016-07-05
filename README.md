@@ -97,6 +97,7 @@ const SDL2_render = NS.require('SDl2_render')
   - Event 'mousewheel'
 
 - Methods
+  - `new window(options)`
   - `window.getID()`
   - `window.close()`
   - `window.destroy()`
