@@ -89,7 +89,7 @@ const SDL2_render = NS.require('SDl2_render')
       - `h` Integer - `0x1FFF0000`
       - `x` Integer - `0x1FFF0000`
       - `y` Integer - `0x1FFF0000`
-      - `background` Integer - `0xFF0000`
+      - `background` Integer|Object|Array - rgb | { rgb, a } | { r, g, b, a } | [rgb, a] - `0xFF0000`
       - `center` Boolean - `false`
       - `show` Boolean - `true`
       - `closable` Boolean - `true`
@@ -108,6 +108,8 @@ const SDL2_render = NS.require('SDl2_render')
   - `win.center()`
   - `win.setModal(win)`
     - `win` [Circular]
+  - `win.render`
+    - `[Getter]` Object
   - `win.size`
     - `[Getter]` Array-like Object - `{ w: 100, h: 200, "1": 100, "2": 200 }`
     - `[Setter]` Object|Array - `{ w: 100, h: 200 }` | `[ 100, 200 ]`
@@ -237,8 +239,10 @@ const SDL2_render = NS.require('SDl2_render')
 > Get and set the clipboard text.
 
 - Methods
-  - `clipboard.text` [Getter/Setter]
-  - `clipboard.hasText` [Getter]
+  - `clipboard.text`
+    - `[Getter/Setter]` String
+  - `clipboard.hasText`
+    - `[Getter]` Boolean
 
 - Events
   - Event 'update'
@@ -251,10 +255,15 @@ const SDL2_render = NS.require('SDl2_render')
   - `keyboard.startTextInput()`
   - `keyboard.stopTextInput()`
   - `keyboard.setTextInput(rect)`
-  - `keyboard.hasTextInput` [Getter]
-  - `keyboard.hasScreenKeyboard` [Getter]
-  - `keyboard.state` [Getter]
-  - `keyboard.mod` [Getter]
+    - `rect` Object|Array - { x, y, w, h }
+  - `keyboard.hasTextInput`
+    - `[Getter]` Boolean
+  - `keyboard.hasScreenKeyboard`
+    - `[Getter]` Boolean
+  - `keyboard.state`
+    - `[Getter]` Object
+  - `keyboard.mod`
+    - `[Getter]` Object
 
 
 ### mouse
@@ -264,17 +273,34 @@ const SDL2_render = NS.require('SDl2_render')
   - `mouse.setCursor(id)`
   - `mouse.setCursor(image, hot_x, hot_y)`
   - `mouse.setCursor(data, mask, w, h, hot_x, hot_y)`
-  - `mouse.capture` [Getter]
-  - `mouse.relative` [Getter/Setter]
-  - `mouse.show` [Getter/Setter]
-  - `mouse.state` [Getter]
+  - `mouse.capture`
+    - `[Setter]` Boolean
+  - `mouse.relative`
+    - `[Getter/Setter]` Boolean
+  - `mouse.show`
+    - `[Getter/Setter]` Boolean
+  - `mouse.state`
+    - `[Getter]` Object
+      - `win` Object
+        - `x` Integer
+        - `y` Integer
+      - `global` Object
+        - `x` Integer
+        - `y` Integer
+      - `relative` Object
+        - `x` Integer
+        - `y` Integer
 
 
 ### power
 > Moniter the power infomation of hardware
 
 - Methods
-  - `power.info` [Getter/Setter]
+  - `power.info`
+    - `[Getter]` Object
+      - `life` Integer
+      - `percentage` Integer
+      - `state` String
 
 
 ### font
@@ -283,21 +309,42 @@ please `npm install sdl2-ttf` before use.
 
 - Methods
   - `let ft = new font(file, pixelsize, index)`
-  - `ft.style` [Geter/Setter]
-  - `ft.outline` [Geter/Setter]
-  - `ft.hinting` [Geter/Setter]
-  - `ft.kerning` [Geter/Setter]
-  - `ft.height` [Geter]
-  - `ft.ascent` [Geter]
-  - `ft.descent` [Geter]
-  - `ft.lineSkip` [Geter]
+    - `file` String
+    - `pixelsize` Integer
+    - `index` Integer
+  - `ft.style`
+    - `[Geter/Setter]` String
+  - `ft.outline`
+    - `[Geter/Setter]` Integer
+  - `ft.hinting`
+    - `[Geter/Setter]` Integer
+  - `ft.kerning`
+    - `[Geter/Setter]` Integer
+  - `ft.height`
+    - `[Geter]` Integer
+  - `ft.ascent`
+    - `[Geter]` Integer
+  - `ft.descent`
+    - `[Geter]` Integer
+  - `ft.lineSkip`
+    - `[Geter]` Integer
   - `ft.solid(text, rgba)`
+    - `text` String
+    - `rgba` Integer|Object|Array - rgb | { rgb, a } | { r, g, b, a } | [rgb, a]
   - `ft.shade(text, rgba, rgbaBG)`
+    - `text` String
+    - `rgba` Integer|Object|Array - rgb | { rgb, a } | { r, g, b, a } | [rgb, a]
+    - `rgbaBG` Integer|Object|Array - rgb | { rgb, a } | { r, g, b, a } | [rgb, a]
   - `ft.blend(text, rgba)`
+    - `text` String
+    - `rgba` Integer|Object|Array - rgb | { rgb, a } | { r, g, b, a } | [rgb, a]
   - `ft.close()`
   - `ft.test(char)`
+    - `char` String
   - `ft.metrics(char)`
+    - `char` String
   - `ft.getSize(char)`
+    - `char` String
   - *static* `font.init()`
   - *static* `font.wasInit()`
   - *static* `font.quit()`
@@ -310,6 +357,7 @@ please `npm install sdl2-image` before use.
 - Methods
 
   - `let img = new image(file)`
+    - `file` String
   - `img.free()`
   - `img.texture(render)`
   - *static* `Image.init()`
