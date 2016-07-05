@@ -112,13 +112,13 @@ const SDL2_render = NS.require('SDl2_render')
     - `[Getter]` Array-like Object - `{ w: 100, h: 200, "1": 100, "2": 200 }`
     - `[Setter]` Object|Array - `{ w: 100, h: 200 }` | `[ 100, 200 ]`
   - `win.bounds`
-    - `[Getter/Setter]` Array-like Object / (Object|Array) - { x, y, w, h }
+    - `[Getter/Setter]` [Array-like Object / Object|Array] - { x, y, w, h }
   - `win.minimumSize`
-    - `[Getter/Setter]` Array-like Object / (Object|Array) - { w, h }
+    - `[Getter/Setter]` [Array-like Object / Object|Array] - { w, h }
   - `win.maximumSize`
-    - `[Getter/Setter]` Array-like Object / (Object|Array) - { w, h }
+    - `[Getter/Setter]` [Array-like Object / Object|Array] - { w, h }
   - `win.bordersSize` 
-    - `[Getter]` Array-like Object / (Object|Array) - { top, right, bottom, left }
+    - `[Getter]` [Array-like Object / Object|Array] - { top, right, bottom, left }
   - `win.id`
     - `[Getter]` Integer
   - `win.focus`
