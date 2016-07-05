@@ -97,40 +97,40 @@ const SDL2_render = NS.require('SDl2_render')
   - Event 'mousewheel'
 
 - Methods
-  - `new window(options)`
-  - `window.getID()`
-  - `window.close()`
-  - `window.destroy()`
-  - `window.restore()`
-  - `window.center()`
-  - `window.setModal(window)`
-  - `window.focus` [Getter/Setter]
-  - `window.grab` [Getter/Setter]
-  - `window.show` [Getter/Setter]
-  - `window.maximize` [Getter/Setter]
-  - `window.minimize` [Getter/Setter]
-  - `window.fullScreen` [Getter/Setter]
-  - `window.bounds` [Getter/Setter]
-  - `window.size` [Getter/Setter]
-  - `window.minimumSize` [Getter/Setter]
-  - `window.maximumSize` [Getter/Setter]
-  - `window.resizable` [Getter]
-  - `window.closable` [Getter/Setter]
-  - `window.position` [Getter/Setter]
-  - `window.title` [Getter/Setter]
-  - `window.background` [Getter/Setter]
-  - `window.bordered` [Setter]
-  - `window.bordersSize` [Getter]
-  - `window.screenKeyboard` [Getter]
-  - `static Window.all` [Getter]
-  - `static Window.focused` [Getter]
-  - `static Window.mouseFocused` [Getter]
-  - `static Window.keyboardFocused` [Getter]
-  - `static Window.grabbed` [Getter]
-  - `static Window.mouseFocused` [Getter]
-  - `static Window.screenSaver` [Getter]
-  - `static Window.fromID` [Getter]
-  - `static Window.showMessageBox(options, callback)`
+  - `let win = new window(options)`
+  - `win.getID()`
+  - `win.close()`
+  - `win.destroy()`
+  - `win.restore()`
+  - `win.center()`
+  - `win.setModal(window)`
+  - `win.focus` [Getter/Setter]
+  - `win.grab` [Getter/Setter]
+  - `win.show` [Getter/Setter]
+  - `win.maximize` [Getter/Setter]
+  - `win.minimize` [Getter/Setter]
+  - `win.fullScreen` [Getter/Setter]
+  - `win.bounds` [Getter/Setter]
+  - `win.size` [Getter/Setter]
+  - `win.minimumSize` [Getter/Setter]
+  - `win.maximumSize` [Getter/Setter]
+  - `win.resizable` [Getter]
+  - `win.closable` [Getter/Setter]
+  - `win.position` [Getter/Setter]
+  - `win.title` [Getter/Setter]
+  - `win.background` [Getter/Setter]
+  - `win.bordered` [Setter]
+  - `win.bordersSize` [Getter]
+  - `win.screenKeyboard` [Getter]
+  - *static* `window.all` [Getter]
+  - *static* `window.focused` [Getter]
+  - *static* `window.mouseFocused` [Getter]
+  - *static* `window.keyboardFocused` [Getter]
+  - *static* `window.grabbed` [Getter]
+  - *static* `window.mouseFocused` [Getter]
+  - *static* `window.screenSaver` [Getter]
+  - *static* `window.fromID` [Getter]
+  - *static* `window.showMessageBox(options, callback)`
 
 
 
@@ -179,25 +179,25 @@ const SDL2_render = NS.require('SDl2_render')
 please `npm install sdl2-ttf` before use.
 
 - Methods
-  - `new font(file, pixelsize, index)`
-  - `font.style` [Geter/Setter]
-  - `font.outline` [Geter/Setter]
-  - `font.hinting` [Geter/Setter]
-  - `font.kerning` [Geter/Setter]
-  - `font.height` [Geter]
-  - `font.ascent` [Geter]
-  - `font.descent` [Geter]
-  - `font.lineSkip` [Geter]
-  - `font.solid(text, rgba)`
-  - `font.shade(text, rgba, rgbaBG)`
-  - `font.blend(text, rgba)`
-  - `font.close()`
-  - `font.test(char)`
-  - `font.metrics(char)`
-  - `font.getSize(char)`
-  - `static Font.init()`
-  - `static Font.wasInit()`
-  - `static Font.quit()`
+  - `let ft = new font(file, pixelsize, index)`
+  - `ft.style` [Geter/Setter]
+  - `ft.outline` [Geter/Setter]
+  - `ft.hinting` [Geter/Setter]
+  - `ft.kerning` [Geter/Setter]
+  - `ft.height` [Geter]
+  - `ft.ascent` [Geter]
+  - `ft.descent` [Geter]
+  - `ft.lineSkip` [Geter]
+  - `ft.solid(text, rgba)`
+  - `ft.shade(text, rgba, rgbaBG)`
+  - `ft.blend(text, rgba)`
+  - `ft.close()`
+  - `ft.test(char)`
+  - `ft.metrics(char)`
+  - `ft.getSize(char)`
+  - *static* `font.init()`
+  - *static* `font.wasInit()`
+  - *static* `font.quit()`
 
 ### image
 > Load image from file.
@@ -205,8 +205,8 @@ please `npm install sdl2-image` before use.
 
 - Methods
 
-  - `new image(file)`
-  - `image.free()`
-  - `image.texture(render)`
-  - `static Image.init()`
-  - `static Image.quit()`
+  - `let img = new image(file)`
+  - `img.free()`
+  - `img.texture(render)`
+  - *static* `Image.init()`
+  - *static* `Image.quit()`
