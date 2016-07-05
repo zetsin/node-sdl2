@@ -37,7 +37,4 @@ jspm_packages
 .node_repl_history
 
 
-/public/download/*
-!/public/download/README.md
-/public/downloading/*
-!/public/downloading/YOUWILLNOTREADME.md
+/test/*
