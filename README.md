@@ -41,7 +41,7 @@ const SDL2_render = NS.require('SDl2_render')
 
 ## Tutorials
 
-- [Test everything in node-sdl2](https://github.com/zetsingithub/node-sdl2/blob/master/test/test.js)
+- [Test everything in node-sdl2](/test/test.js)
 
 ## API References
 
