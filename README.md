@@ -60,41 +60,21 @@ const SDL2_render = NS.require('SDl2_render')
 ### app
 > Control your application's event lifecycle.
 
-- Events
-  - `app.on('window-all-closed', () = {})`
-  - `app.on('before-quit', (event) = {})`
-  - `app.on('will-quit', (event) = {})`
-  - `app.on('drop', (file) = {})`
-
 - Methods
   - `app.quit()`
   - `app.hide()`
   - `app.show()`
   - `app.exit()`
 
+- Events
+  - `app.on('window-all-closed', () = {})`
+  - `app.on('before-quit', (event) = {})`
+  - `app.on('will-quit', (event) = {})`
+  - `app.on('drop', (file) = {})`
+
+
 ### window
 > Create and control `window(s)`.
-
-- Events
-  - Event 'show'
-  - Event 'hide'
-  - Event 'move'
-  - Event 'resize'
-  - Event 'minimize'
-  - Event 'maximize'
-  - Event 'restore'
-  - Event 'enter'
-  - Event 'leave'
-  - Event 'focus'
-  - Event 'blur'
-  - Event 'keydown'
-  - Event 'keyup'
-  - Event 'editing'
-  - Event 'textinput'
-  - Event 'mousemove'
-  - Event 'mousedown'
-  - Event 'mouseup'
-  - Event 'mousewheel'
 
 - Methods
   - `let win = new window(options)`
@@ -132,17 +112,38 @@ const SDL2_render = NS.require('SDl2_render')
   - *static* `window.fromID` [Getter]
   - *static* `window.showMessageBox(options, callback)`
 
+- Events
+  - `win.on('show', () => {})
+  - `win.on('hide', () => {})
+  - `win.on('move', () => {})
+  - `win.on('resize', () => {})
+  - `win.on('minimize', () => {})
+  - `win.on('maximize', () => {})
+  - `win.on('restore', () => {})
+  - `win.on('enter', () => {})
+  - `win.on('leave', () => {})
+  - `win.on('focus', () => {})
+  - `win.on('blur', () => {})
+  - `win.on('keydown', () => {})
+  - `win.on('keyup', () => {})
+  - `win.on('editing', () => {})
+  - `win.on('textinput', () => {})
+  - `win.on('mousemove', () => {})
+  - `win.on('mousedown', () => {})
+  - `win.on('mouseup', () => {})
+  - `win.on('mousewheel', () => {})
 
 
 ### clipboard
 > Get and set the clipboard text.
 
-- Events
-  - Event 'update'
-
 - Methods
   - `clipboard.text` [Getter/Setter]
   - `clipboard.hasText` [Getter]
+
+- Events
+  - Event 'update'
+
 
 ### keyboard
 > Control the keyboard.
@@ -156,6 +157,7 @@ const SDL2_render = NS.require('SDl2_render')
   - `keyboard.state` [Getter]
   - `keyboard.mod` [Getter]
 
+
 ### mouse
 > Control the mouse and cursor.
 
@@ -168,11 +170,13 @@ const SDL2_render = NS.require('SDl2_render')
   - `mouse.show` [Getter/Setter]
   - `mouse.state` [Getter]
 
+
 ### power
 > Moniter the power infomation of hardware
 
 - Methods
   - `power.info` [Getter/Setter]
+
 
 ### font
 > Allow you drawing text into window's face.
@@ -198,6 +202,7 @@ please `npm install sdl2-ttf` before use.
   - *static* `font.init()`
   - *static* `font.wasInit()`
   - *static* `font.quit()`
+
 
 ### image
 > Load image from file.
