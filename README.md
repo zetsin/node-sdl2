@@ -7,7 +7,7 @@ Install with npm:
 npm install node-sdl2
 ```
 
-## Use
+## Usage
 
 ### 1. Use with wrapped class ( [Api Reference](#api-references) )
 
