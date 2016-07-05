@@ -61,10 +61,10 @@ const SDL2_render = NS.require('SDl2_render')
 > Control your application's event lifecycle.
 
 - Events
-  - Event 'window-all-closed'
-  - Event 'before-quit'
-  - Event 'will-quit'
-  - Event 'drop'
+  - `app.on('window-all-closed', () = {})`
+  - `app.on('before-quit', (event) = {})`
+  - `app.on('will-quit', (event) = {})`
+  - `app.on('drop', (file) = {})`
 
 - Methods
   - `app.quit()`
