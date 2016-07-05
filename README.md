@@ -58,14 +58,12 @@ const SDL2_render = NS.require('SDl2_render')
 > Control your application's event lifecycle.
 
 - Events
-> The `app` object emits the following events:
   - Event 'window-all-closed'
   - Event 'before-quit'
   - Event 'will-quit'
   - Event 'drop'
 
 - Methods
-> The `app` object has the following methods:
   - `app.quit()`
   - `app.hide()`
   - `app.show()`
@@ -75,7 +73,6 @@ const SDL2_render = NS.require('SDl2_render')
 > Create and control `window(s)`.
 
 - Events
-> The `window` object emits the following events:
   - Event 'show'
   - Event 'hide'
   - Event 'move'
@@ -97,7 +94,6 @@ const SDL2_render = NS.require('SDl2_render')
   - Event 'mousewheel'
 
 - Methods
-> The `window` object has the following methods:
   - `window.getID()`
   - `window.close()`
   - `window.destroy()`
@@ -138,11 +134,9 @@ const SDL2_render = NS.require('SDl2_render')
 > Get and set the clipboard text.
 
 - Events
-> The `clipboard` object emits the following events:
   - Event 'update'
 
 - Methods
-> The `clipboard` object has the following methods:
   - `clipboard.text` [Getter/Setter]
   - `clipboard.hasText` [Getter]
 
@@ -150,7 +144,6 @@ const SDL2_render = NS.require('SDl2_render')
 > Control the keyboard.
 
 - Methods
-> The `keyboard` object has the following methods:
   - `keyboard.startTextInput()`
   - `keyboard.stopTextInput()`
   - `keyboard.setTextInput(rect)`
@@ -163,7 +156,6 @@ const SDL2_render = NS.require('SDl2_render')
 > Control the mouse and cursor.
 
 - Methods
-> The `mouse` object has the following methods:
   - `mouse.setCursor(id)`
   - `mouse.setCursor(image, hot_x, hot_y)`
   - `mouse.setCursor(data, mask, w, h, hot_x, hot_y)`
@@ -176,7 +168,6 @@ const SDL2_render = NS.require('SDl2_render')
 > Moniter the power infomation of hardware
 
 - Methods
-> The `power` object has the following methods:
   - `power.info` [Getter/Setter]
 
 ### font
@@ -184,7 +175,6 @@ const SDL2_render = NS.require('SDl2_render')
 please `npm install sdl2-ttf` before use.
 
 - Methods
-> The `font` object has the following methods:
   - `new font(file, pixelsize, index)`
   - `font.style` [Geter/Setter]
   - `font.outline` [Geter/Setter]
@@ -210,7 +200,6 @@ please `npm install sdl2-ttf` before use.
 please `npm install sdl2-image` before use.
 
 - Methods
-> The `image` object has the following methods:
 
   - `new image(file)`
   - `image.free()`
