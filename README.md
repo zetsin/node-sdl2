@@ -41,7 +41,10 @@ const SDL2_render = NS.require('SDl2_render')
 
 ## Tutorials
 
-- [Test everything in node-sdl2](/test/test.js)
+- [Test everything in node-sdl2](/test/test.js), you will get [Screenshot](#screenshot) shown below.
+
+## Screenshot
+![Screenshot](/test/screenshot.png)
 
 ## API References
 
