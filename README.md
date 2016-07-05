@@ -69,15 +69,20 @@ const SDL2_render = NS.require('SDl2_render')
 - Events
   - `app.on('window-all-closed', () = {})`
   - `app.on('before-quit', (event) = {})`
+    - `event` Object
+      - `preventDefalut()`
   - `app.on('will-quit', (event) = {})`
+    - `event` Object
+      - `preventDefault()`
   - `app.on('drop', (file) = {})`
+    - `file` String
 
 
 ### window
 > Create and control `window(s)`.
 
 - Methods
-  - `let win = new window(options)`
+  - `let win = new window(opts)`
   - `win.getID()`
   - `win.close()`
   - `win.destroy()`
@@ -110,15 +115,23 @@ const SDL2_render = NS.require('SDl2_render')
   - *static* `window.mouseFocused` [Getter]
   - *static* `window.screenSaver` [Getter]
   - *static* `window.fromID` [Getter]
-  - *static* `window.showMessageBox(options, callback)`
+  - *static* `window.showMessageBox(opts, cb)`
 
 - Events
   - `win.on('change', (w, h) => {})`
+    - `w` Integer
+    - `h` Integer
   - `win.on('close', (event) => {}`
+    - `event` Object
+      - `preventDefault()`
   - `win.on('show', () => {})`
   - `win.on('hide', () => {})`
   - `win.on('move', (x, y) => {})`
+    - `x` Integer
+    - `y` Integer
   - `win.on('resize', (w, h) => {})`
+    - `w` Integer
+    - `h` Integer
   - `win.on('minimize', () => {})`
   - `win.on('maximize', () => {})`
   - `win.on('restore', () => {})`
@@ -127,13 +140,49 @@ const SDL2_render = NS.require('SDl2_render')
   - `win.on('focus', () => {})`
   - `win.on('blur', () => {})`
   - `win.on('keydown', (key) => {})`
+    - `key` Object
+      - `scancode` Integer
+      - `scanname` String
+      - `keycode` Integer
+      - `keyname` String
+      - `repeat` Boolean
   - `win.on('keyup', (key) => {})`
+    - `key` Object
+      - `scancode` Integer
+      - `scanname` String
+      - `keycode` Integer
+      - `keyname` String
+      - `repeat` Boolean
   - `win.on('editing', ({str, start, length}) => {})`
+    - `str` String
+    - `start` Integer
+    - `length` Integer
   - `win.on('textinput', (str) => {})`
+    - `str` String
   - `win.on('mousemove', (pos) => {})`
+    - `pos` Object
+      - `x` Integer
+      - `y` Integer
+      - `xrel` Integer
+      - `yrel` Integer
   - `win.on('mousedown', (mou) => {})`
+    - `mou` Object
+      - `x` Integer
+      - `y` Integer
+      - `clicks` Integer
+      - `button` String
   - `win.on('mouseup', (mou) => {})`
+    - `mou` Object
+      - `x` Integer
+      - `y` Integer
+      - `clicks` Integer
+      - `button` String
   - `win.on('mousewheel', (mou) => {})`
+    - `mou` Object
+      - `x` Integer
+      - `y` Integer
+      - `clicks` Integer
+      - `button` String
 
 
 ### clipboard
