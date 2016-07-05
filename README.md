@@ -113,25 +113,27 @@ const SDL2_render = NS.require('SDl2_render')
   - *static* `window.showMessageBox(options, callback)`
 
 - Events
-  - `win.on('show', () => {})
-  - `win.on('hide', () => {})
-  - `win.on('move', () => {})
-  - `win.on('resize', () => {})
-  - `win.on('minimize', () => {})
-  - `win.on('maximize', () => {})
-  - `win.on('restore', () => {})
-  - `win.on('enter', () => {})
-  - `win.on('leave', () => {})
-  - `win.on('focus', () => {})
-  - `win.on('blur', () => {})
-  - `win.on('keydown', () => {})
-  - `win.on('keyup', () => {})
-  - `win.on('editing', () => {})
-  - `win.on('textinput', () => {})
-  - `win.on('mousemove', () => {})
-  - `win.on('mousedown', () => {})
-  - `win.on('mouseup', () => {})
-  - `win.on('mousewheel', () => {})
+  - `win.on('change', (w, h) => {})`
+  - `win.on('close', (event) => {}`
+  - `win.on('show', () => {})`
+  - `win.on('hide', () => {})`
+  - `win.on('move', (x, y) => {})`
+  - `win.on('resize', (w, h) => {})`
+  - `win.on('minimize', () => {})`
+  - `win.on('maximize', () => {})`
+  - `win.on('restore', () => {})`
+  - `win.on('enter', () => {})`
+  - `win.on('leave', () => {})`
+  - `win.on('focus', () => {})`
+  - `win.on('blur', () => {})`
+  - `win.on('keydown', (key) => {})`
+  - `win.on('keyup', (key) => {})`
+  - `win.on('editing', ({str, start, length}) => {})`
+  - `win.on('textinput', (str) => {})`
+  - `win.on('mousemove', (pos) => {})`
+  - `win.on('mousedown', (mou) => {})`
+  - `win.on('mouseup', (mou) => {})`
+  - `win.on('mousewheel', (mou) => {})`
 
 
 ### clipboard
