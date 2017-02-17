@@ -289,8 +289,7 @@ var SDL_UserEvent = exports.SDL_UserEvent = Struct({
 	data1: voit_ptr,
 	data2: voit_ptr,
 })
-var SDL_SysWMmsg = exports.SDL_SysWMmsg = Struct({
-})
+var SDL_SysWMmsg = exports.SDL_SysWMmsg = voit
 var SDL_SysWMmsg_ptr = exports.SDL_SysWMmsg_ptr = ref.refType(SDL_SysWMmsg)
 var SDL_SysWMEvent = exports.SDL_SysWMEvent = Struct({
 	type: Uint32,

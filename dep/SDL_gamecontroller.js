@@ -49,8 +49,7 @@ var SDL_GameControllerButton = exports.SDL_GameControllerButton = {
 }
 
 var voit = exports.voit = ref.types.void
-var _SDL_GameController = exports._SDL_GameController = Struct({
-})
+var _SDL_GameController = exports._SDL_GameController = voit
 var SDL_GameController = exports.SDL_GameController = _SDL_GameController
 var uint32 = exports.uint32 = ref.types.uint32
 var int32 = exports.int32 = ref.types.int32

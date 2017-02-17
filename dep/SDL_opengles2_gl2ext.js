@@ -10,8 +10,7 @@ var voit = exports.voit = ref.types.void
 var int32 = exports.int32 = ref.types.int32
 var GLint64 = exports.GLint64 = int32
 var GLuint64 = exports.GLuint64 = int32
-var __GLsync = exports.__GLsync = Struct({
-})
+var __GLsync = exports.__GLsync = voit
 var __GLsync_ptr = exports.__GLsync_ptr = ref.refType(__GLsync)
 var GLsync = exports.GLsync = __GLsync_ptr
 var voit_ptr = exports.voit_ptr = ref.refType(voit)

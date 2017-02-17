@@ -21,8 +21,7 @@ var SDL_bool = exports.SDL_bool = {
 }
 
 var voit = exports.voit = ref.types.void
-var _SDL_Joystick = exports._SDL_Joystick = Struct({
-})
+var _SDL_Joystick = exports._SDL_Joystick = voit
 var SDL_Joystick = exports.SDL_Joystick = _SDL_Joystick
 var Uint8 = SDL_stdinc_lib.Uint8
 var c__SA_SDL_JoystickGUID_FI_data_arr = ArrayType(Uint8, 16)

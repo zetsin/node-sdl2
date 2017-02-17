@@ -12,8 +12,7 @@ var SDL_ThreadPriority = exports.SDL_ThreadPriority = {
 }
 
 var voit = exports.voit = ref.types.void
-var SDL_Thread = exports.SDL_Thread = Struct({
-})
+var SDL_Thread = exports.SDL_Thread = voit
 var ulong = exports.ulong = ref.types.ulong
 var SDL_threadID = exports.SDL_threadID = ulong
 var uint32 = exports.uint32 = ref.types.uint32

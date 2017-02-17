@@ -57,9 +57,16 @@ var wchar_t_ptr = exports.wchar_t_ptr = ref.refType(wchar_t)
 var long = exports.long = ref.types.long
 var double = exports.double = ref.types.double
 var string_ptr = exports.string_ptr = ref.refType(string)
-var float = exports.float = ref.types.float
-var _SDL_iconv_t = exports._SDL_iconv_t = Struct({
+var __va_list_tag = exports.__va_list_tag = Struct({
+	gp_offset: uint32,
+	fp_offset: uint32,
+	overflow_arg_area: voit_ptr,
+	reg_save_area: voit_ptr,
 })
+var c__T_va_list_arr = ArrayType(__va_list_tag, 1)
+var va_list = exports.va_list = c__T_va_list_arr
+var float = exports.float = ref.types.float
+var _SDL_iconv_t = exports._SDL_iconv_t = voit
 var _SDL_iconv_t_ptr = exports._SDL_iconv_t_ptr = ref.refType(_SDL_iconv_t)
 var SDL_iconv_t = exports.SDL_iconv_t = _SDL_iconv_t_ptr
 var size_t_ptr = exports.size_t_ptr = ref.refType(size_t)
@@ -113,9 +120,9 @@ FFI.Library(process.platform == 'win32' ? 'SDL2' : 'libSDL2', {
 	SDL_strcasecmp: [ int32, [ string, string, ] ],
 	SDL_strncasecmp: [ int32, [ string, string, size_t, ] ],
 	SDL_sscanf: [ int32, [ string, string, ] ],
-	SDL_vsscanf: [ int32, [ string, string, int32, ] ],
+	SDL_vsscanf: [ int32, [ string, string, va_list, ] ],
 	SDL_snprintf: [ int32, [ string, size_t, string, ] ],
-	SDL_vsnprintf: [ int32, [ string, size_t, string, int32, ] ],
+	SDL_vsnprintf: [ int32, [ string, size_t, string, va_list, ] ],
 	SDL_acos: [ double, [ double, ] ],
 	SDL_asin: [ double, [ double, ] ],
 	SDL_atan: [ double, [ double, ] ],

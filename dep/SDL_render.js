@@ -55,10 +55,8 @@ var SDL_RendererInfo = exports.SDL_RendererInfo = Struct({
 	max_texture_width: int32,
 	max_texture_height: int32,
 })
-var SDL_Renderer = exports.SDL_Renderer = Struct({
-})
-var SDL_Texture = exports.SDL_Texture = Struct({
-})
+var SDL_Renderer = exports.SDL_Renderer = voit
+var SDL_Texture = exports.SDL_Texture = voit
 var SDL_RendererInfo_ptr = exports.SDL_RendererInfo_ptr = ref.refType(SDL_RendererInfo)
 var SDL_Window = SDL_video_lib.SDL_Window
 var SDL_Window_ptr = exports.SDL_Window_ptr = ref.refType(SDL_Window)

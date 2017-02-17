@@ -51,6 +51,14 @@ var uint32 = exports.uint32 = ref.types.uint32
 var int32 = exports.int32 = ref.types.int32
 var string = exports.string = ref.types.CString
 var voit_ptr = exports.voit_ptr = ref.refType(voit)
+var __va_list_tag = exports.__va_list_tag = Struct({
+	gp_offset: uint32,
+	fp_offset: uint32,
+	overflow_arg_area: voit_ptr,
+	reg_save_area: voit_ptr,
+})
+var c__T_va_list_arr = ArrayType(__va_list_tag, 1)
+var va_list = exports.va_list = c__T_va_list_arr
 var SDL_LogOutputFunction = exports.SDL_LogOutputFunction = FFI.Function( voit, [ voit_ptr, int32, uint32, string, ] )
 var SDL_LogOutputFunction_ptr = exports.SDL_LogOutputFunction_ptr = ref.refType(SDL_LogOutputFunction)
 var voit_ptr_ptr = exports.voit_ptr_ptr = ref.refType(voit_ptr)
@@ -68,7 +76,7 @@ FFI.Library(process.platform == 'win32' ? 'SDL2' : 'libSDL2', {
 	SDL_LogError: [ voit, [ int32, string, ] ],
 	SDL_LogCritical: [ voit, [ int32, string, ] ],
 	SDL_LogMessage: [ voit, [ int32, uint32, string, ] ],
-	SDL_LogMessageV: [ voit, [ int32, uint32, string, int32, ] ],
+	SDL_LogMessageV: [ voit, [ int32, uint32, string, va_list, ] ],
 	SDL_LogGetOutputFunction: [ voit, [ SDL_LogOutputFunction_ptr, voit_ptr_ptr, ] ],
 	SDL_LogSetOutputFunction: [ voit, [ SDL_LogOutputFunction, voit_ptr, ] ],
 }, exports)

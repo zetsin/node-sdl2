@@ -9,8 +9,7 @@ var SDL_joystick_lib = require('./SDL_joystick')
 
 
 var voit = exports.voit = ref.types.void
-var _SDL_Haptic = exports._SDL_Haptic = Struct({
-})
+var _SDL_Haptic = exports._SDL_Haptic = voit
 var SDL_Haptic = exports.SDL_Haptic = _SDL_Haptic
 var Uint8 = SDL_stdinc_lib.Uint8
 var Sint32 = SDL_stdinc_lib.Sint32

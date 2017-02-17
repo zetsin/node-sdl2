@@ -27,8 +27,7 @@ var SDL_PixelFormat_ptr = exports.SDL_PixelFormat_ptr = ref.refType(SDL_PixelFor
 var int32 = exports.int32 = ref.types.int32
 var voit_ptr = exports.voit_ptr = ref.refType(voit)
 var SDL_Rect = SDL_rect_lib.SDL_Rect
-var SDL_BlitMap = exports.SDL_BlitMap = Struct({
-})
+var SDL_BlitMap = exports.SDL_BlitMap = voit
 var SDL_BlitMap_ptr = exports.SDL_BlitMap_ptr = ref.refType(SDL_BlitMap)
 var SDL_Surface = exports.SDL_Surface = Struct({
 	flags: Uint32,

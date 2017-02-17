@@ -35,6 +35,7 @@ var SDL_AudioSpec = exports.SDL_AudioSpec = Struct({
 	callback: SDL_AudioCallback,
 	userdata: voit_ptr,
 })
+var SDL_AudioCVT = exports.SDL_AudioCVT = voit
 var SDL_AudioCVT_ptr = exports.SDL_AudioCVT_ptr = ref.refType(SDL_AudioCVT)
 var SDL_AudioFilter = exports.SDL_AudioFilter = FFI.Function( voit, [ SDL_AudioCVT_ptr, ushort, ] )
 var double = exports.double = ref.types.double

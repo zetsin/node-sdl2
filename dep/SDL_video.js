@@ -125,8 +125,7 @@ var c__SA_SDL_DisplayMode = exports.c__SA_SDL_DisplayMode = Struct({
 	driverdata: voit_ptr,
 })
 var SDL_DisplayMode = exports.SDL_DisplayMode = c__SA_SDL_DisplayMode
-var SDL_Window = exports.SDL_Window = Struct({
-})
+var SDL_Window = exports.SDL_Window = voit
 var uint32 = exports.uint32 = ref.types.uint32
 var SDL_GLContext = exports.SDL_GLContext = voit_ptr
 var string = exports.string = ref.types.CString

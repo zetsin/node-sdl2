@@ -33,8 +33,7 @@ var SDL_bool = exports.SDL_bool = {
 }
 
 var voit = exports.voit = ref.types.void
-var SDL_Cursor = exports.SDL_Cursor = Struct({
-})
+var SDL_Cursor = exports.SDL_Cursor = voit
 var uint32 = exports.uint32 = ref.types.uint32
 var SDL_Window = SDL_video_lib.SDL_Window
 var SDL_Window_ptr = exports.SDL_Window_ptr = ref.refType(SDL_Window)
