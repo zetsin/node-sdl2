@@ -1,7 +1,3 @@
-function SDL2(name) {
-	return require('./lib/' + name)
-}
-
 'use strict'
 
 let sdl2 = {

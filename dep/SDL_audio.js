@@ -35,17 +35,30 @@ var SDL_AudioSpec = exports.SDL_AudioSpec = Struct({
 	callback: SDL_AudioCallback,
 	userdata: voit_ptr,
 })
-var SDL_AudioCVT = exports.SDL_AudioCVT = Struct({
-})
 var SDL_AudioCVT_ptr = exports.SDL_AudioCVT_ptr = ref.refType(SDL_AudioCVT)
 var SDL_AudioFilter = exports.SDL_AudioFilter = FFI.Function( voit, [ SDL_AudioCVT_ptr, ushort, ] )
+var double = exports.double = ref.types.double
+var Uint8_ptr = exports.Uint8_ptr = ref.refType(Uint8)
+var c__S_SDL_AudioCVT_FI_filters_arr = ArrayType(SDL_AudioFilter, 10)
+var SDL_AudioCVT = exports.SDL_AudioCVT = Struct({
+	needed: int32,
+	src_format: SDL_AudioFormat,
+	dst_format: SDL_AudioFormat,
+	rate_incr: double,
+	buf: Uint8_ptr,
+	len: int32,
+	len_cvt: int32,
+	len_mult: int32,
+	len_ratio: double,
+	filters: c__S_SDL_AudioCVT_FI_filters_arr,
+	filter_index: int32,
+})
 var string = exports.string = ref.types.CString
 var SDL_AudioSpec_ptr = exports.SDL_AudioSpec_ptr = ref.refType(SDL_AudioSpec)
 var uint32 = exports.uint32 = ref.types.uint32
 var SDL_AudioDeviceID = exports.SDL_AudioDeviceID = uint32
 var SDL_RWops = SDL_rwops_lib.SDL_RWops
 var SDL_RWops_ptr = exports.SDL_RWops_ptr = ref.refType(SDL_RWops)
-var Uint8_ptr = exports.Uint8_ptr = ref.refType(Uint8)
 var Uint8_ptr_ptr = exports.Uint8_ptr_ptr = ref.refType(Uint8_ptr)
 var Uint32_ptr = exports.Uint32_ptr = ref.refType(Uint32)
 
